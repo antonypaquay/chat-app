@@ -4,11 +4,17 @@ import { Redirect } from "react-router-dom";
 class Connexion extends Component {
   state = {
     pseudo: "",
-    goToChat: false
+    goToChat: false,
+    character: false
   };
 
   handleChange = event => {
     const pseudo = event.target.value;
+    if(pseudo){
+      this.setState({character: true})
+    } else {
+      this.setState({character: false})
+    }
     this.setState({ pseudo });
   };
 
@@ -26,13 +32,12 @@ class Connexion extends Component {
       <div className="connexionBox">
         <form className="connexion" onSubmit={this.handleSubmit}>
           <input
-            value={this.state.pseudo}
             onChange={this.handleChange}
             type="text"
-            placeholder="Pseudo"
+            placeholder="Your personal ID"
             required
           />
-          <button type="submit">GO</button>
+          {this.state.character ? <button type="submit">GO</button> : null}
         </form>
       </div>
     );
