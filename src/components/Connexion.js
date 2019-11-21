@@ -25,7 +25,7 @@ class Connexion extends Component {
 
   render() {
     if (this.state.goToChat) {
-      return <Redirect to={`/pseudo/${this.state.pseudo}`}></Redirect>;
+      return <Redirect push to={`/pseudo/${this.state.pseudo}`}></Redirect>;
     }
 
     return (
@@ -34,10 +34,10 @@ class Connexion extends Component {
           <input
             onChange={this.handleChange}
             type="text"
-            placeholder="Your personal ID"
+            placeholder="Your user"
             required
           />
-          {this.state.character ? <button type="submit">GO</button> : null}
+          {this.state.character ? <button type="submit">Log in</button> : null}
         </form>
       </div>
     );
