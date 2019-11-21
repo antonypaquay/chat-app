@@ -38,12 +38,16 @@ body {
 }
 .connexion > input {
 	box-sizing: border-box;
-	font-size: 24px;
-	padding: 5px;
-	border: 5px solid #2196F3;
-	border-width: 0 0 5px 0;
+	font-size: 0.75rem;
+	padding: 8px 10px;
+	border: 5px solid rgb(43, 96, 139);
+	border-width: 0 0 2px 0;
 	outline: none;
 }
+::placeholder {
+	font-size: 0.75rem;
+}
+
 .box {
 	margin: auto;
 	display:flex;
@@ -166,7 +170,7 @@ textarea {
 }
 
 button {
-	font-size: 20px;
+	font-size: 0.75rem;
 	border: none;
 	color: white;
 	background-color: #2196F3;
