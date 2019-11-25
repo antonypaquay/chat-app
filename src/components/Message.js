@@ -1,7 +1,7 @@
 import React from "react";
 
-const Message = () => {
-  return <p className="user-message">Mon message</p>;
+const Message = ({pseudo, message}) => {
+return <p className="user-message">{`${pseudo.toUpperCase()}: ${message}`}</p>;
 };
 
 export default Message;

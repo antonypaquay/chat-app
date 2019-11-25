@@ -21,6 +21,12 @@ class Formulaire extends Component {
     this.createMessage();
   };
 
+  handleKeyUp = e => {
+    if(e.key === "Enter"){
+      this.createMessage();
+    }
+  }
+
   handleChange = e => {
     const message = e.target.value;
     const length = this.props.length - message.length;
@@ -33,6 +39,7 @@ class Formulaire extends Component {
         <textarea
           value={this.state.message}
           onChange={this.handleChange}
+          onKeyUp={this.handleKeyUp}
           required
           maxLength={this.props.length}
         />
