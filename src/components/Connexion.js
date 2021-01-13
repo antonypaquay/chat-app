@@ -10,10 +10,10 @@ class Connexion extends Component {
 
   handleChange = event => {
     const pseudo = event.target.value;
-    if(pseudo){
-      this.setState({character: true})
+    if (pseudo) {
+      this.setState({ character: true })
     } else {
-      this.setState({character: false})
+      this.setState({ character: false })
     }
     this.setState({ pseudo });
   };
@@ -29,17 +29,22 @@ class Connexion extends Component {
     }
 
     return (
+    
       <div className="connexionBox">
-        <form className="connexion" onSubmit={this.handleSubmit}>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Your user"
-            required
-          />
-          {this.state.character ? <button type="submit">Log in</button> : null}
-        </form>
-      </div>
+          <header>
+            <h1>ConnectApp</h1>
+          </header>
+          <form className="connexion" onSubmit={this.handleSubmit}>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              placeholder="What is your pseudo?"
+              required
+            />
+            <button type="submit">Start takling!</button>
+          </form>
+        </div>
+     
     );
   }
 }

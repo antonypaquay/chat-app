@@ -1,0 +1,19 @@
+.centerx, .centery, .centerxy {
+    position: absolute;
+}
+
+.centerx {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.centerx {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.centerxy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

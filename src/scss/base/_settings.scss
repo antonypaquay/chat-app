@@ -1,0 +1,19 @@
+// Import Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap");
+
+//***** Colors *****//
+$primary: #0a2ce3;
+$gray: #9995a7;
+$placeholder: #ada8ba;
+$white-blue: #edeef7;
+$white-snow: #f7f7f8;
+$white: #ffffff;
+
+//***** Fonts *****//
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2rem;
+  color: $white;
+}
