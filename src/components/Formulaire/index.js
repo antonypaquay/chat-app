@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './Formulaire.scss'
+import SendIcon from '../../assets/img/send.svg';
 
 class Formulaire extends Component {
   state = {
@@ -6,12 +8,32 @@ class Formulaire extends Component {
     length: this.props.length
   };
 
+  getCurrentTime = () => {
+
+    const date = new Date();
+    const currentTime = {
+      year: date.getUTCFullYear(),
+      month: date.getMonth(),
+      day: date.getDay(),
+      hour: date.getHours(),
+      minutes: date.getMinutes(),
+    }
+
+    return currentTime;
+
+  }
+
+
+
+
   createMessage = () => {
-    const { addMessage, pseudo } = this.props;
+    const { addMessage, user } = this.props;
     const message = {
-      pseudo,
-      message: this.state.message
+      user,
+      message: this.state.message,
+      time: this.getCurrentTime()
     };
+    this.getCurrentTime();
     addMessage(message);
     this.setState({ message: "" });
   };
@@ -22,7 +44,7 @@ class Formulaire extends Component {
   };
 
   handleKeyUp = e => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
       this.createMessage();
     }
   }
@@ -42,9 +64,13 @@ class Formulaire extends Component {
           onKeyUp={this.handleKeyUp}
           required
           maxLength={this.props.length}
+          placeholder="Type your message..."
+          rows="1"
         />
-        <div className="info">{this.state.length}</div>
-        <button type="submit">Envoyer</button>
+       
+        <button type="submit">
+          <img srcSet={SendIcon} alt="send icon"/>
+        </button>
       </form>
     );
   }

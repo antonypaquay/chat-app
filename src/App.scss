@@ -1,0 +1,54 @@
+.app {
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 0;
+    padding: 40px 16px 32px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    background-color: var(--color-white);
+}
+
+/* ----------------------------
+	MESSAGES
+---------------------------- */
+
+.messages {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    align-self: flex-end;
+    max-height: calc(100vh - 310px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.form {
+    position: relative;
+    textarea {
+        display: block;
+        width: calc(100% - 48px);
+        border-radius: var(--border-radius);
+        margin-top: 48px;
+    }
+    button[type="submit"] {
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 32px;
+        border: none;
+        background-color: var(--color-primary);
+        outline: none;
+        img {
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

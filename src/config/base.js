@@ -3,9 +3,9 @@ import firebase from "firebase/app";
 import 'firebase/database';
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDsTf6EmdP3Wn4mZxp8SMr09Ar47fBNZIU",
-    authDomain: "chat-9309c.firebaseapp.com",
-    databaseURL: "https://chat-9309c.firebaseio.com"
+    apiKey: "AIzaSyDyP-TH15Q8QwqFyQYrV7csxwt7eoMIQDs",
+    authDomain: "sparky-69b31.firebaseapp.com",
+    databaseURL: "https://sparky-69b31-default-rtdb.europe-west1.firebasedatabase.app/"
 })
 
 

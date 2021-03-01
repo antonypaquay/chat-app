@@ -1,0 +1,18 @@
+input {
+    background-color: var(--color-white-blue);
+    border: 0;
+    padding: 16px 24px;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+textarea {
+    padding: 16px 24px;
+    background-color: var(--color-white-blue);
+    border: 0;
+    outline: none;
+}
+
+::placeholder {
+    color: var(--color-placeholder);
+}

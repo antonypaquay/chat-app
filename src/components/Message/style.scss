@@ -1,0 +1,68 @@
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.875rem;
+}
+
+.message > * {
+    width: 100%;
+    margin: 10px 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.user__message,
+.not__user__message {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        margin: 0;
+        padding: 16px;
+        border-radius: 25px;
+        color: #443663;
+        .user__name {
+            text-transform: capitalize;
+        }
+    }
+    .time {
+        font-size: 0.75rem;
+        color: var(--color-gray);
+    }
+}
+
+.user__message {
+    align-self: flex-end;
+    p {
+        max-width: 75%;
+        background-color: var(--color-white-blue);
+        border-bottom-right-radius: 0;
+    }
+}
+
+.not__user__message {
+    align-self: flex-start;
+    .user__img {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        max-width: 75%;
+        img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            border-radius: 32px;
+            margin-right: 8px;
+        }
+        p {
+            display: inline-block;
+            width: calc(100% - 40px);
+            background-color: var(--color-white-snow);
+            border-bottom-left-radius: 0;
+        }
+    }
+}

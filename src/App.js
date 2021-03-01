@@ -1,15 +1,17 @@
 import React, { Component, createRef } from "react";
+import { Link } from 'react-router-dom';
 import Formulaire from "./components/Formulaire";
 import Message from "./components/Message";
+import './App.scss';
 // firebase
-import base from "./base";
+import base from "./config/base";
 // Animations
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 class App extends Component {
   state = {
     messages: {},
-    pseudo: this.props.match.params.pseudo
+    user: this.props.match.params.user
   };
 
   messagesRef = createRef();
@@ -37,12 +39,16 @@ class App extends Component {
     this.setState({ messages });
   };
 
-  isUser = pseudo => pseudo === this.state.pseudo;
+  isUser = user => user === this.state.user;
+
+  handleClick = () => {
+    localStorage.removeItem('user');
+  }
 
   render() {
     const messages = Object.keys(this.state.messages).map(key => {
       return (
-        <CSSTransition 
+        <CSSTransition
           key={key}
           timeout={200}
           classNames='fade'
@@ -50,20 +56,22 @@ class App extends Component {
           <Message
             isUser={this.isUser}
             message={this.state.messages[key].message}
-            pseudo={this.state.messages[key].pseudo}
+            user={this.state.messages[key].user}
+            time={this.state.messages[key].time}
           />
         </CSSTransition>
       );
     });
 
     return (
-      <div className="box">
+      <div className="app">
+        <Link to="/" onClick={this.handleClick}>Log out</Link>
         <div className="messages" ref={this.messagesRef}>
           <TransitionGroup className="message">{messages}</TransitionGroup>
         </div>
         <Formulaire
           length={140}
-          pseudo={this.state.pseudo}
+          user={this.state.user}
           addMessage={message => this.addMessage(message)}
         />
       </div>
